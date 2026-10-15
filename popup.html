@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFM ELO Predictor</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header><div class="brand">LFM <span>ELO PREDICTOR</span></div><div class="sub">ACC race target estimator · prototype</div></header>
+<main>
+  <section class="panel">
+    <label for="myElo">Your current ELO</label>
+    <input id="myElo" type="number" min="500" max="5000" value="1500">
+    <div class="two">
+      <div><label for="kFactor">Estimated K-factor</label><input id="kFactor" type="number" min="1" max="100" value="24"></div>
+      <div><label for="driversCount">Field size</label><input id="driversCount" type="number" min="2" max="100" value="20"></div>
+    </div>
+    <label for="csv">Entry list (CSV: driver,elo)</label>
+    <textarea id="csv" rows="5" placeholder="Driver A,1680&#10;Driver B,1540&#10;Driver C,1430"></textarea>
+    <div class="buttons"><button id="useDetected" class="secondary">Load detected list</button><button id="calculate">Calculate targets</button></div>
+    <div id="notice" class="notice">Paste or load an entry list. Review extracted ratings before calculating.</div>
+  </section>
+  <section class="panel">
+    <div class="section-title">YOUR TARGET</div>
+    <div id="target" class="target">—</div>
+    <div id="summary" class="muted">Add an entry list to estimate finish-position targets.</div>
+    <div id="results" class="results"></div>
+  </section>
+  <section class="panel disclaimer">
+    <strong>Estimate, not official LFM Elo</strong>
+    <p>LFM confirms that rating depends on expected ranking, field ratings and race-length/series weighting. Its full numerical formula is not publicly specified in the FAQ. These figures use an Elo-inspired model and must not be treated as exact LFM changes.</p>
+  </section>
+</main>
+<footer><span>v0.1.0</span><span>Local-only prototype</span></footer>
+<script src="popup.js"></script>
+</body>
+</html>
