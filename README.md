@@ -1,4 +1,4 @@
-# LFM ACC ELO Predictor — prototype
+# LFM ACC ELO Predictor - prototype v0.1
 
 Browser-agnostic WebExtension starter for Chromium browsers (Chrome, Edge, Brave, Opera) and adaptable to Firefox.
 
