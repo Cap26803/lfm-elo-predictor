@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "LFM ACC ELO Predictor",
+  "version": "0.1.0",
+  "description": "Estimate finishing-position targets from an LFM race entry list.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://lowfuelmotorsport.com/*", "https://www.lowfuelmotorsport.com/*"],
+  "action": {"default_title": "LFM ELO Predictor", "default_popup": "popup.html"},
+  "content_scripts": [{
+    "matches": ["https://lowfuelmotorsport.com/*", "https://www.lowfuelmotorsport.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}
